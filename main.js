@@ -6,7 +6,7 @@
 const URLImage = new Proxy({
  image: null,
  url: null,
- save: function(){if(new.target){throw"Do not call this function using 'new'"}else{let i=this.image;(i&&i instanceof Image)?Photos.save(i):null}},
+ save: function(){if(new.target){throw"Do not call this function using 'new'"}else{let i=this.image;(i&&i instanceof Image)?Photos.save(i):null}}, // save
  toBase64: function(){if(new.target){throw"Do not call this function using 'new'"}else{let i=this.image;if(i&&i instanceof Image){let j=Data.fromJPEG(i);let p=Data.fromPNG(i);j?i=j.toBase64String():p?i=p.toBase64String():0;return i}else{logError("Something went wrong!")}}}, // toBase64
  toRawString: function(){if(new.target){throw"Do not call this function using 'new'"}else{let i=this.image;if(i&&i instanceof Image){let j=Data.fromJPEG(i);let p=Data.fromPNG(i);if(j)i=j.toRawString();else if(p)i=p.toRawString();return i}else{logError("Something went wrong!")}}}, // toRawString
  toBytes: function(){if(new.target){throw"Do not call this function using 'new'"}else{let i=this.image;if(i&&i instanceof Image){let j=Data.fromJPEG(i);let p=Data.fromPNG(i);j?i=j.getBytes():p?i=p.getBytes():0;return i}else{logError("Something went wrong!")}}}, // toBytes

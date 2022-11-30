@@ -1,7 +1,5 @@
-/* 
- - Fixes (pre-release)?. (11/5/22): getUnsafe wasn't working, so I added missing 'await' keyword to the getUnsafe Request.
- - await URLImage.get(url: String): Image, await URLImage.getUnsafe(url: String): Image. BTW, this was made by Xemt on GitHub and blah blah blah
-*/
+// Fixes (pre-release)?. (11/5/22): getUnsafe wasn't working, so I added missing 'await' keyword to the getUnsafe Request.
+// await URLImage.get(url: String): Image, await URLImage.getUnsafe(url: String): Image. BTW, this was made by Xemt on GitHub and blah blah blah
 var iE="The image wasn't retrieved YET (most likely), or the image type is invalid (less likely?)";var lE=logError
 const URLImage = new Proxy({
  image: null,

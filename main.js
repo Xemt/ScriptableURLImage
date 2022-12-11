@@ -9,7 +9,7 @@ const URLImage = new Proxy({
  toRawString: function(){if(new.target){throw"Do not call this function using 'new'"}else{let a=this.image;if(a&&a instanceof Image){let b=Data.fromJPEG(a);let c=Data.fromPNG(a);a=(b?b.toRawString():c?c.toRawString():0);return a}else lE("The image wasn't retrieved YET (most likely), or the image type is invalid (less likely?)")}}, // toRawString
  toBytes: function(){if(new.target){throw"Do not call this function using 'new'"}else{let a=this.image;if(a&&a instanceof Image){let b=Data.fromJPEG(a);let c=Data.fromPNG(a);a=(b?b.getBytes():c?c.getBytes():0);return a}else lE("The image wasn't retrieved YET (most likely), or the image type is invalid (less likely?)")}}, // toBytes
  save: function(){if(new.target){throw"Do not call this function using 'new'"}else{let a=this.image;if(a&&a instanceof Image)Photos.save(a);else lE("The image wasn't retrieved YET (most likely), or the image type is invalid (less likely?)")}}, // save
- check: (()=>{let a=this.version;new Request("").loadJSON().then();})(),
+ check: (()=>{let a=this.version;new Request("https://raw.githubusercontent.com/Xemt/ScriptableURLImage/main/info.json").loadJSON().then(b=>{if(a!==b.current){logWarning("You oughta update this.");};},c=>lE(c));})(),
 }, {
  set: function(a,b,c){if(b==="image"&&c&&c instanceof Image||b==="url"&&c&&typeof c==="string")a[b]=c;else if(b==="image"&&(c instanceof Image)===!1||b==="url"&&(c instanceof String)===!1)lE(`Invalid value for URLImage.${b}`);else if(b!=="image"&&b!=="url")lE(`Cannot change this value (${"URLImage."+b})`)}
 })

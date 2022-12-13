@@ -1,15 +1,15 @@
-var lE=logError
+var lE=logError;
 const URLImage = new Proxy({
  image: null,
  url: null,
- version: 0.10,
+ version: 0.11,
  get: async function(a){if(new.target)throw"Do not call this function using 'new'";else{if(a&&typeof a==="string"&&a.toLowerCase().match(/^(https:\/\/|file:\/\/)/g)){this.url=a;await new Request(a).loadImage().then(b=>{this.image=b},c=>{throw c});return this.image}else{throw"URL is invalid"}}}, // getSafe
  getUnsafe: async function(a){if(new.target)throw"Do not call this function using 'new'";else{if(a&&typeof a==="string"&&a.toLowerCase().match(/^(https:\/\/|http:\/\/|data:image\/(aces|apng|avci|avcs|avif|bmp|cgm|dicom-rle|dpx|emf|fits|g3fax|gif|heic|heic-sequence|heif|heif-sequence|hej2k|hsj2|ief|jls|jp2|jpeg|jph|jphc|jpm|jxr|jxra|jxrs|jxs|jxsc|jxsi|jxss|ktx|ktx2|naplps|png|prs.ptif|prs.pti|pwg-raster|svg\+xml|t38|tiff|tiff-fx|vnd.(adobe.photoshop|airzip.accelerator.azv|cns.inf2|dece.graphic|djvu|dwg|dxf|dvb.subtitle|fastbidsheet|fpx|fst|fujixerox.edmics-mmr|fujixerox.edmics-rlc|globalgraphics.pgb|microsoft.icon|mix|ms-modi|mozilla.apng|net-fpx|pco.b16|radiance|sealed.png|sealedmedia.softseal.gif|sealedmedia.softseal.jpg|svf|tencent.tap|valve.source.texture|wap.wbmp|xiff|zbrush.pcx)|wmf)|blob:(\/\/|\/\/\/)?|file:\/\/)/g)){this.url=a;let b=new Request(a);b.allowInsecureRequest=!0;await b.loadImage().then(c=>{this.image=c},d=>{throw d});return this.image}else{throw"URL is invalid"}}}, // getUnsafe
  toBase64: function(){if(new.target){throw"Do not call this function using 'new'"}else{let a=this.image;if(a&&a instanceof Image){let b=Data.fromJPEG(a);let c=Data.fromPNG(a);b?a=b.toBase64String():c?a=c.toBase64String():0;return a}else lE("The image wasn't retrieved YET (most likely), or the image type is invalid (less likely?)")}}, // toBase64
  toRawString: function(){if(new.target){throw"Do not call this function using 'new'"}else{let a=this.image;if(a&&a instanceof Image){let b=Data.fromJPEG(a);let c=Data.fromPNG(a);a=(b?b.toRawString():c?c.toRawString():0);return a}else lE("The image wasn't retrieved YET (most likely), or the image type is invalid (less likely?)")}}, // toRawString
  toBytes: function(){if(new.target){throw"Do not call this function using 'new'"}else{let a=this.image;if(a&&a instanceof Image){let b=Data.fromJPEG(a);let c=Data.fromPNG(a);a=(b?b.getBytes():c?c.getBytes():0);return a}else lE("The image wasn't retrieved YET (most likely), or the image type is invalid (less likely?)")}}, // toBytes
  save: function(){if(new.target){throw"Do not call this function using 'new'"}else{let a=this.image;if(a&&a instanceof Image)Photos.save(a);else lE("The image wasn't retrieved YET (most likely), or the image type is invalid (less likely?)")}}, // save
- check: (()=>{let a=this.version;new Request("https://raw.githubusercontent.com/Xemt/ScriptableURLImage/main/info.json").loadJSON().then(b=>{if(a!==b.current){logWarning("You oughta update this.");};},c=>lE(c));})(),
 }, {
  set: function(a,b,c){if(b==="image"&&c&&c instanceof Image||b==="url"&&c&&typeof c==="string")a[b]=c;else if(b==="image"&&(c instanceof Image)===!1||b==="url"&&(c instanceof String)===!1)lE(`Invalid value for URLImage.${b}`);else if(b!=="image"&&b!=="url")lE(`Cannot change this value (${"URLImage."+b})`)}
-})
+});
+(()=>{let a=this.version;new Request("https://raw.githubusercontent.com/Xemt/ScriptableURLImage/main/info.json").loadJSON().then(b=>{if(a!==b.current){logWarning("You oughta update this.");};},c=>lE(c));})();

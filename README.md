@@ -3,7 +3,9 @@
 Fixes (pre-release) (11/5/22): getUnsafe wasn't working, so I added missing 'await' keyword to the getUnsafe Request.
 
 `await URLImage.get(url -> String) -> Image`
+`URLImage.get(url -> String).then`
 `await URLImage.getUnsafe(url -> String) -> Image`
+`URLImage.getUnsafe(url -> String).then`
 `URLImage.toBase64() & URLImage.toRawString() -> String `
 `URLImage.toBytes() -> Array`
 `URLImage.save() -> undefined`

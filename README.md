@@ -13,8 +13,8 @@
   <p> You can just copy and paste it into a project in the Scriptable App, or you can download the code. </p>
  <h2> Methods: </h2>
  <pre>
-  <code language="typescript" class="typescript">
-  URLImage.get(url: String): 0<2 0>2 Promise<TResult>
+  <code language="javascript">
+  URLImage.get(url: String): Promise<TResult>
   URLImage.getUnsafe(url: String): Promise<TResult> 
   URLImage.toBase64(): String
   URLImage.toRawString(): String

@@ -27,11 +27,11 @@
    <li> (1/3/23). Finally added this, made some minor changes to existing methods/properties, replaced "get" regex with the "getUnsafe" regex before removing the "getUnsafe" method/property (yes "get" will replace "getUnsafe"), added "size" method/property, etc! </li>
   </ul>
  <h2> Fixes: </h2>
-  <h3> (prerelease): </h3>
+  <p> (prerelease): </p>
    <ul>
     <li> (11/5/22). 'getUnsafe' wasn't working because I forgot to add the missing 'await' keyword in 'getUnsafe'. </li>
    </ul>
-  <h3> (postrelease): </h3>
+  <p> (postrelease): </p>
    <ul>
     <li> </li>
    </ul>

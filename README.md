@@ -5,6 +5,7 @@
   <li><a href="#-Usage-">Usage</a></li>
   <li><a href="#-Installation-">Installation</a></li>
   <li><a href="#-Methods-">Methods</a></li>
+  <li><a href="#-Changes-">Changes</a></li>
   <li><a href="#-Fixes-">Fixes</a></li>
  </ul>
  <h2> Usage: </h2>
@@ -21,6 +22,10 @@
   URLImage.save(): undefined
   </code>
  </pre>
+ <h2> Changes: </h2>
+  <ul>
+   <li> (1/3/23). Finally added this, made some minor changes to existing methods/properties, replaced "get" regex with the "getUnsafe" regex before removing the "getUnsafe" method/property (yes "get" will replace "getUnsafe"), added "size" method/property, etc! </li>
+  </ul>
  <h2> Fixes: </h2>
   <h3> (prerelease): </h3>
    <ul>

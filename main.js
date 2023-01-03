@@ -7,8 +7,8 @@ const URLImage = new Proxy({
  toBase64: function(){if(new.target){throw"Do not call this function using 'new'"}else{let a=this.image;if(a&&a instanceof Image){a=(Data.fromJPEG(a)||Data.fromPNG(a)).toBase64String();return a}else lE("The image wasn't retrieved YET (most likely), or the image type is invalid (less likely)")}}, // toBase64
  toRawString: function(){if(new.target){throw"Do not call this function using 'new'"}else{let a=this.image;if(a&&a instanceof Image){a=(Data.fromJPEG(a)||Data.fromPNG(a)).toRawString();return a}else lE("The image wasn't retrieved YET (most likely), or the image type is invalid (less likely)")}}, // toRawString
  toBytes: function(){if(new.target){throw"Do not call this function using 'new'"}else{let a=this.image;if(a&&a instanceof Image){a=(Data.fromJPEG(a)||Data.fromPNG(a)).getBytes();return a}else lE("The image wasn't retrieved YET (most likely), or the image type is invalid (less likely)")}}, // toBytes
- get size(){let a=this.image;return(a&&a instanceof Image)?a.size:null;},
  save: function(){if(new.target){throw"Do not call this function using 'new'"}else{let a=this.image;(a&&a instanceof Image)?Photos.save(a):lE("The image wasn't retrieved YET (most likely), or the image type is invalid (less likely?)")}}, // save
+ get size(){let a=this.image;return(a&&a instanceof Image)?a.size:null;},
 }, {
  set: function(a,b,c){if(b==="image"&&c&&c instanceof Image||b==="url"&&c&&typeof c==="string")a[b]=c;else if(b==="image"&&(c instanceof Image)===!1||b==="url"&&(c instanceof String)===!1)lE(`Invalid value for URLImage.${b}`);else if(b!=="image"&&b!=="url")lE(`Cannot change this value (${"URLImage."+b})`)}
 });

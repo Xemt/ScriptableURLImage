@@ -1,6 +1,9 @@
 # ScriptableURLImage
 ## Table Of Contents:
  [Usage](#Usage)
+ [Installation](#Installation)
+ [Methods](#Methods)
+ [Fixes](#Fixes)
 ## Usage:
  Use it to get images from a request (Using Scriptable's Request API).
 ## Installation:

@@ -2,10 +2,10 @@
  <h1> ScriptableURLImage </h1>
  <h2> Table Of Contents: </h2>
  <ul>
-  <li><a href="#Usage">Usage</a></li>
-  <li><a href="#Installation">Installation</a></li>
-  <li><a href="#Methods">Methods</a></li>
-  <li><a href="#Fixes">Fixes</a></li>
+  <li><a href="#-Usage-">Usage</a></li>
+  <li><a href="#-Installation-">Installation</a></li>
+  <li><a href="#-Methods-">Methods</a></li>
+  <li><a href="#-Fixes-">Fixes</a></li>
  </ul>
  <h2> Usage: </h2>
   <p> Use it to get images from a request (Using Scriptable's Request API). </p>
@@ -29,4 +29,4 @@
    <ul>
     <li> </li>
    </ul>
- </body>
+</body>

@@ -13,7 +13,7 @@
   <p> You can just copy and paste it into a project in the Scriptable App, or you can download the code. </p>
  <h2> Methods: </h2>
  <pre language="javascript">
-  <code language="javascript">
+  <code language="javascript" style="color:blue">
   URLImage.get(url: String): Promise<TResult>
   URLImage.getUnsafe(url: String): Promise<TResult> 
   URLImage.toBase64(): String

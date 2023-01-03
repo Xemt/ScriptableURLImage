@@ -12,14 +12,16 @@
  <h2> Installation: </h2>
   <p> You can just copy and paste it into a project in the Scriptable App, or you can download the code. </p>
  <h2> Methods: </h2>
- <code language="typescript" class="typescript">
-  URLImage.get(url: String): Promise<TResult>
+ <pre>
+  <code language="typescript" class="typescript">
+  URLImage.get(url: String): 0<2 0>2 Promise<TResult>
   URLImage.getUnsafe(url: String): Promise<TResult> 
   URLImage.toBase64(): String
   URLImage.toRawString(): String
   URLImage.toBytes(): Array<number>
   URLImage.save(): undefined
- </code>
+  </code>
+ </pre>
  <h2> Fixes: </h2>
   <h3> (prerelease): </h3>
    <ul>

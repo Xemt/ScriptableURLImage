@@ -1,11 +1,23 @@
 # ScriptableURLImage
-#### Made to get an image from a URL, with Scriptable’s APIs...
-Fixes (pre-release) (11/5/22): getUnsafe wasn't working, so I added missing 'await' keyword to the getUnsafe Request.
-
-`await URLImage.get(url -> String) -> Image`
-`URLImage.get(url -> String).then`
-`await URLImage.getUnsafe(url -> String) -> Image`
-`URLImage.getUnsafe(url -> String).then`
-`URLImage.toBase64() & URLImage.toRawString() -> String `
-`URLImage.toBytes() -> Array`
-`URLImage.save() -> undefined`
+## Table Of Contents:
+ [Usage](#Usage)
+## Usage:
+ Use it to get images from a request (Using Scriptable's Request API).
+## Installation:
+ You can just copy and paste it into a project in the Scriptable App, or you can download the code.
+## Methods:
+ ```
+  URLImage.get(url: String) -> Promise<TResult>
+  URLImage.getUnsafe(url: String) -> Promise<TResult> 
+  URLImage.toBase64() -> String
+  URLImage.toRawString() -> String
+  URLImage.toBytes() -> Array<number>
+  URLImage.save() -> undefined
+ ```
+## Fixes:
+ #### (prerelease):
+ - (11/5/22). 'getUnsafe' wasn't working because I forgot to add the missing 'await' keyword in 'getUnsafe'.
+ #### (postrelease):
+ -
+ <style>
+</style>

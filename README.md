@@ -15,7 +15,6 @@
  <pre language="javascript">
   <code language="javascript" style="color:blue">
   URLImage.get(url: String): Promise<TResult>
-  URLImage.getUnsafe(url: String): Promise<TResult> 
   URLImage.toBase64(): String
   URLImage.toRawString(): String
   URLImage.toBytes(): Array<number>
